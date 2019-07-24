@@ -188,6 +188,8 @@
                 context.drawImage(video, 0, 0, 320, 320);
 
                 // CatchCode(); 
+                var imgData = canvas.toDataURL();
+                $('#image').attr('src', imgData)
 
             }
 
@@ -236,5 +238,6 @@
 <body>
     <video id="video" style="width:100%; height: 100%;" autoplay playsinline></video>
     <canvas style="display:none; background-color:#F00;" id="canvas"></canvas>
+    <img src="" id="image">
 </body>
 </html>
