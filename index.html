@@ -198,7 +198,7 @@
     //抓屏获取图像流，并上传到服务器      
 
     function CatchCode() {
-
+        console.log(canvas)
         if (canvas != null) {
 
             //以下开始编 数据   
@@ -208,7 +208,7 @@
             //将图像转换为base64数据
 
             var base64Data = imgData;//.substr(22); //在前端截取22位之后的字符串作为图像数据
-
+            console.log(base64Data)
             $('#image').attr('src', base64Data)
             return ;
             //开始异步上
