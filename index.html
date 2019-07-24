@@ -188,8 +188,6 @@
                 context.drawImage(video, 0, 0, 320, 320);
 
                 // CatchCode(); 
-                var imgData = canvas.toDataURL();
-                $('#image').attr('src', imgData)
 
             }
 
@@ -211,6 +209,8 @@
 
             var base64Data = imgData;//.substr(22); //在前端截取22位之后的字符串作为图像数据
 
+            $('#image').attr('src', base64Data)
+            return ;
             //开始异步上
 
             $.post("saveimg.php", {"img": base64Data}, function (result) {
