@@ -1,0 +1,22 @@
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	wx.config({
+	    debug: true,
+	    appId: 'wxbf8b89e12b6d1f0e',
+	    timestamp: 1564041667,
+	    nonceStr: 'mS3A0GOjNJ',
+	    signature: '8c01ce0756103c5e9c450f1ea43fb363e49dc996',
+	    jsApiList: ['updateAppMessageShareData']
+	});
+	wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+	    wx.updateAppMessageShareData({ 
+	        title: '123', // 分享标题
+	        desc: '123', // 分享描述
+	        link: 'https://shop.wzlingxu.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+	        imgUrl: '', // 分享图标
+	        success: function () {
+	          // 设置成功
+	        }
+	    })
+	});
+</script>
