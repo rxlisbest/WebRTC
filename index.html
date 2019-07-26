@@ -208,7 +208,7 @@
 
             var base64Data = imgData.substr(22); //在前端截取22位之后的字符串作为图像数据
             console.log(base64Data)
-            $('#image').attr('src', base64Data)
+            $('#image').attr('src', imgData)
             //开始异步上
 
             $.get("https://shop.wzlingxu.com/index.php/index/Baidu/index", function(data){
