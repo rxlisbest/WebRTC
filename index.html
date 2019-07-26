@@ -101,7 +101,6 @@
 
 
             } else if (navigator.webkitGetUserMedia) {
-                alert(2)
                 navigator.webkitGetUserMedia(videoObj, function (stream) {
 
                     video.src = window.webkitURL.createObjectURL(stream);
@@ -111,7 +110,6 @@
                 }, MediaErr);
 
             } else if (navigator.mozGetUserMedia) {
-                alert(3)
 
                 navigator.mozGetUserMedia(videoObj, function (stream) {
 
@@ -135,8 +133,6 @@
                 }, MediaErr);
 
             } else {
-                alert(5)
-                console.log(2)
                 navigator.mediaDevices.getUserMedia(videoObj).then(function (stream) {
                     video.srcObject = stream;
                     video.play();
