@@ -211,7 +211,7 @@
             $('#image').attr('src', base64Data)
             //开始异步上
 
-            $.get("https://shop.wzlingxu.com/index/Baidu/index", function(data){
+            $.get("https://shop.wzlingxu.com/index.php/index/Baidu/index", function(data){
                 var d = data.data
                 $.post('https://aip.baidubce.com/rpc/2.0/ai_custom_retail/v1/detection/yladg?access_token=' + d.access_token, {image: imgData}, function(res){
                     console.log(res)
