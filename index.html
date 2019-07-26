@@ -13,7 +13,7 @@
         text-align: center;
 	margin: 0;
     }
-    div#scan{height:500px;width:300px;position: absolute;;left:-100px;top:0px;
+    div#scan{height:100%;width:5px;position: absolute;;left:-100px;top:0px;
 
         background: -webkit-linear-gradient(left,rgba(200,0,0,0),rgba(200,0,0,0.3)); /* Safari 5.1 - 6.0 */
 
@@ -22,18 +22,6 @@
         background: -moz-linear-gradient(right,rgba(200,0,0,0),rgba(200,0,0,0.3)); /* Firefox 3.6 - 15 */
 
         background: linear-gradient(to right,rgba(200,0,0,0),rgba(200,0,0,0.3)); /* 标准的语法 */
-
-    }
-
-    div#scan.yellow{
-
-        background: -webkit-linear-gradient(left,rgba(200,200,0,0),rgba(200,200,0,0.3)); /* Safari 5.1 - 6.0 */
-
-        background: -o-linear-gradient(right,rgba(200,200,0,0),rgba(200,200,0,0.3)); /* Opera 11.1 - 12.0 */
-
-        background: -moz-linear-gradient(right,rgba(200,200,0,0),rgba(200,200,0,0.3)); /* Firefox 3.6 - 15 */
-
-        background: linear-gradient(to right,rgba(200,200,0,0),rgba(200,200,0,0.3)); /* 标准的语法 */
 
     }
 </style>
@@ -257,7 +245,8 @@ canvas.width = video.videoWidth * scale;
 			}
 			startPat()
                     },
-                    error: function (message) {
+                    error: function (message) {      
+                        startPat()
                         alert("提交失败"+JSON.stringify(message));
                     }
                 });
@@ -287,11 +276,6 @@ canvas.width = video.videoWidth * scale;
                 });
 
             },1000*20);
-            setTimeout(function(){
-
-                $("#scan").addClass("yellow");
-
-            },3000)
         })
     </script>
     <!-- img src="" width="200" height="500" id="image" -->
