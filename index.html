@@ -212,24 +212,13 @@
             return ;
             //开始异步上
 
-            $.post("saveimg.php", {"img": base64Data}, function (result) {
-
-                printHtml("解析结果：" + result.data);
-
-                if (result.status == "success" && result.data != "") {
-
-                    printHtml("解析结果成功！");
-
-                } else {
-
-                    startPat();//如果没有解析出来则重新抓拍解析       
-
-                }
-
-            }, "json");
-
+            $.get("http://zt.wzlingxu.com/index.php/index/Baidu/index", function(data){
+                var d = data.data
+                $.post('https://aip.baidubce.com/rpc/2.0/ai_custom_retail/v1/detection/yladg?access_token=' + d.access_token, {image: imgData}, function(res){
+                    console.log(res)
+                })
+            });
         }
-
     }
 
 </script>
