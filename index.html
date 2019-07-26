@@ -236,6 +236,10 @@ canvas.width = video.videoWidth * scale;
                     data: JSON.stringify({image: base64Data}),
                     dataType: "json",
                     success: function (res) {
+                        if (res.error_code != undefined) {
+                            startPat()
+                            return ;
+                        }
 			var results = res.results
 			for (var i = 0; i < results.length; i ++) {
 				if (results[i].score > 0.99){
